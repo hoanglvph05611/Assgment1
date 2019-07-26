@@ -1,5 +1,7 @@
 package com.lvh.assgment;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container, new LatestFragment()).commit();
     }
 
     @Override
@@ -84,13 +87,46 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        // Handle navigation view item clicks here.
+//        // Handle navigation view item clicks here.
+        switch (item.getItemId()) {
+            case R.id.nav_latest:
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
+                        new LatestFragment()).commit();
+                break;
+            case R.id.nav_category:
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
+                        new CategoryFragment()).commit();
+                break;
+            case R.id.nav_gifs:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
+//                        new ThongKeFragment()).commit();
 
+                break;
+            case R.id.nav_my_favorites:
+
+//                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
+//                        new GioiThieuFragment()).commit();
+
+                break;
+            case R.id.nav_rate_app:
+                break;
+            case R.id.nav_more_App:
+                break;
+            case R.id.nav_about_us:
+                break;
+            case R.id.nav_setting:
+                break;
+            case R.id.nav_privacy_police:
+                break;
+        }
         int id = item.getItemId();
 
         if (id == R.id.nav_latest) {
             // Handle the camera action
+
         } else if (id == R.id.nav_category) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
+                    new CategoryFragment()).commit();
 
         } else if (id == R.id.nav_gifs) {
 
