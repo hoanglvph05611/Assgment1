@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_category:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
                         new CategoryFragment()).commit();
+                setTitle("Category");
                 break;
             case R.id.nav_gifs:
 //                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
@@ -104,8 +105,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_my_favorites:
 
-//                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
-//                        new GioiThieuFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
+                        new MyFavoriteFragment()).commit();
+                setTitle("My Favorites");
 
                 break;
             case R.id.nav_rate_app:
